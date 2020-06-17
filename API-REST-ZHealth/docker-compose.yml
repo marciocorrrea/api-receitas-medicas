@@ -1,0 +1,13 @@
+version: '3'
+services:
+    mongodb:
+        image: mongo
+        ports:
+            - 27017:27017
+    backand:
+        image: node
+        volumes:
+            - ./:/backend
+        ports:
+            - 3000:3000
+        command: bash -c 'cd /backend && npm i && npm t'

@@ -1,0 +1,33 @@
+{
+    "name": "API-REST-ZHealth",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha src/test",
+        "start": "nodemon index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "homepage": "https://github.com/correamarcio/api-node-mongodb#readme",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "chalk": "^4.1.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.9.18",
+        "mongoose-paginate": "^5.0.3",
+        "require-dir": "^1.2.0"
+    },
+    "devDependencies": {
+        "chai-as-promised": "^7.1.1",
+        "chai": "^4.2.0",
+        "nodemon": "^2.0.4",
+        "chai-http": "^4.3.0",
+        "chai-things": "^0.2.0",
+        "mocha": "^8.0.1"
+    }
+}
