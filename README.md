@@ -33,13 +33,31 @@ Iniciar aplicação:
 $ node index.js
 ```
 
+# Rotas
+
+#### Doctor
+
+-   GET - /doctor
+-   GET - /doctor?page=1&limit=2
+-   POST - /doctor/{id}
+-   PUT/PATCH - /doctor/{id}
+-   DELETE - /doctor/{id}
+
+#### Prescription
+
+-   GET - /prescription
+-   GET - /prescription?page=1&limit=2
+-   POST - /prescription/{id}
+-    PUT/PATCH - /prescription/{id}
+-   DELETE - /prescription/{id}
+
 ### Iniciar
 
 ---
 
 # Doctor
 
-> POST http://localhost:3000/doctors
+> POST /doctors
 
 ### Espera:
 
@@ -163,7 +181,7 @@ Neste momento é gerado o token JWT para o usuário.
 
 ---
 
-> POST http://localhost:3000/doctors/authenticate
+> POST /doctors/authenticate
 
 ### Espera:
 
@@ -209,7 +227,7 @@ Também é gerado o mesmo token, estas são as únicas rotas abertas atualmente,
 
 ---
 
-> PUT E PATCH http://localhost:3000/doctors/{Id}
+> PUT E PATCH /doctors/{Id}
 
 ### Espera:
 
@@ -265,7 +283,7 @@ Caso o token de autenthicasão seja inválido ou i Id não encontrado retorna:
 
 ---
 
-> Delete http://localhost:3000/doctors/{Id}
+> Delete /doctors/{Id}
 
 ### Espera:
 
@@ -291,7 +309,7 @@ Caso o token de autenthicasão seja inválido ou i Id não encontrado, retorna:
 
 ---
 
-> GET http://localhost:3000/doctors/
+> GET /doctors/
 
 ```JSON
 {
@@ -330,7 +348,7 @@ Caso o token de autenthicasão seja inválido ou i Id não encontrado, retorna:
 }
 ```
 ---
->GET http://localhost:3000/doctors?page={value}&limit={value}
+>GET /doctors?page={value}&limit={value}
 
 Este valor tem paginação, recebe qual a página que o p usuário irá navegar e o limite de dados que deve aparecer em uma página, e retorna: 
 
@@ -382,7 +400,7 @@ Perceba que ele retorna a quantidade de doctors, com isso o FrontEnd tem todas a
 
 # Prescription
 
-> POST http://localhost:3000/prescription
+> POST /prescription
 
 ### Espera:
 
@@ -464,8 +482,8 @@ Perceba que o relacionamento com o médico é enserido automaticamente, desta ao
 
 ---
 
-> GET http://localhost:3000/prescription/
-> GET http://localhost:3000/prescription/?page={value}&limit={value}
+> GET /prescription/
+> GET /prescription/?page={value}&limit={value}
 
 Tal como o GET do doctors também com a funçaõ de paginação.
 
@@ -576,7 +594,7 @@ Tal como o GET do doctors também com a funçaõ de paginação.
 }
 ```
 
-> PUT PATCH http://localhost:3000/prescription/{ID}
+> PUT PATCH /prescription/{ID}
 
 ### Espera: 
 ```JSON
@@ -632,7 +650,7 @@ Tal como o GET do doctors também com a funçaõ de paginação.
 Apenas os dados do paciente, uma vez que os dados do médico irão automáticos.
 
 
-> DELETE http://localhost:3000/prescription/{ID}
+> DELETE /prescription/{ID}
 
 ### Retorna:
 
@@ -653,3 +671,6 @@ Caso o token de autenthicasão seja inválido ou i Id não encontrado, retorna:
 }
 ```
 
+### Créditos API
+
+- Empresa: Zhealth
