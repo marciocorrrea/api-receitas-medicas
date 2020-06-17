@@ -52,8 +52,8 @@ $ node index.js
 	"crm": "123455578",
 	"statecrm": "DF",
 	"sex": "M",
-	"firstPassword": "Flamengo1895",
-	"secondPassword": "Flamengo1895"
+	"firstPassword": "ZHealth2020",
+	"secondPassword": "ZHealth2020"
 }
 ```
 
@@ -96,8 +96,8 @@ Existe as seguintes validações:
     "crm": "178",
     "statecrm": "DF1",
     "sex": "1",
-    "firstPassword": "Flam",
-    "secondPassword": "Flamengo1895"
+    "firstPassword": "ZHea",
+    "secondPassword": "ZHealth"
   }
 }
 
