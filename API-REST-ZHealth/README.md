@@ -23,6 +23,8 @@ Efetuar testes:
 ```sh
 $ npm test
 ```
+![Tests
+](https://github.com/correamarcio/API-REST-ZHealth/blob/master/API-REST-ZHealth/Tests-mocha-chai.PNG?raw=true)
 
 Iniciar aplicação:
 
@@ -97,7 +99,7 @@ Existe as seguintes validações:
     "secondPassword": "Flamengo1895"
   }
 }
-}
+
 ```
 
 -   Se tudo ocorrer bem esse será o retorno:
