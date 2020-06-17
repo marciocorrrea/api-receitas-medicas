@@ -1,3 +1,4 @@
+
 ## API-REST-ZHealth
 
 #### Modelo de API REST para cadastro de médicos e prescrições receitas usando:
@@ -106,7 +107,6 @@ Existe as seguintes validações:
 
 ```JSON
 {
-	{
   "status": "sucess",
   "statusCode": 201,
   "info": "User created and generated token",
@@ -279,7 +279,7 @@ Em caso de sucesso retorna:
 }
 ```
 
-Caso o token de autenthicasão seja inválido ou i Id não encontrado retorna:
+Caso o token de autenthicasão seja inválido ou i Id não encontrado, retorna:
 
 ```JSON
 {
@@ -329,8 +329,56 @@ Caso o token de autenthicasão seja inválido ou i Id não encontrado retorna:
   }
 }
 ```
+---
+>GET http://localhost:3000/doctors?page={value}&limit={value}
+
+Este valor tem paginação, recebe qual a página que o p usuário irá navegar e o limite de dados que deve aparecer em uma página, e retorna: 
+
+```JSON
+{
+  "status": "success",
+  "statusCode": 200,
+  "info": "Data found",
+  "page": "1",
+  "limit": "2",
+  "result": {
+    "count": 2,
+    "doctors": [
+      {
+        "createdAt": "2020-06-17T03:06:39.411Z",
+        "_id": "5ee988ce970369158490cbd0",
+        "name": "José",
+        "cpf": "03309273104",
+        "email": "marcio@correa.com.bt",
+        "birth": "16/03/1992",
+        "crm": "12345678",
+        "statecrm": "DF",
+        "sex": "M",
+        "password": "$2a$04$9onLErFtHjySjqq1vd6yz.jLYXjCytV0GTZR.zsIz4WayHbEYhmFi",
+        "__v": 0
+      },
+      {
+        "createdAt": "2020-06-17T03:06:39.411Z",
+        "_id": "5ee988ef970369158490cbd1",
+        "name": "José",
+        "cpf": "03308273104",
+        "email": "mar@correa.com.bt",
+        "birth": "16/03/1992",
+        "crm": "123455678",
+        "statecrm": "DF",
+        "sex": "M",
+        "password": "$2a$04$Z0rr7NmrVYug4LyswYxSa.Mid6jXfeZEwGWT4D01WEdMBag4h3LQy",
+        "__v": 0
+      }
+    ]
+  }
+}
+```
+
+Perceba que ele retorna a quantidade de doctors, com isso o FrontEnd tem todas as informações necessárias para fazer a páginação.
 
 ---
+
 
 # Prescription
 
@@ -370,7 +418,8 @@ Caso o token de autenthicasão seja inválido ou i Id não encontrado retorna:
 
 Todos os campos tem válidações tal como foi feito no Schema de doctors.
 
-Em caso de sucerro retornará:
+Em caso de sucesso,
+### Retorna:
 
 ```JSON
 {
@@ -411,6 +460,196 @@ Em caso de sucerro retornará:
 }
 ```
 
-Perceba que o relacionamento com o médico é enserido automaticamente, reta ao FrontEnd fazer cash dos dados do médico para que não seja necessário digitar todas as vezes.
+Perceba que o relacionamento com o médico é enserido automaticamente, desta ao FrontEnd fazer cash dos dados do médico para que não seja necessário digitar todas as vezes.
 
 ---
+
+> GET http://localhost:3000/prescription/
+> GET http://localhost:3000/prescription/?page={value}&limit={value}
+
+Tal como o GET do doctors também com a funçaõ de paginação.
+
+### Renorna: 
+```JSON
+{
+  "info": "prescriptions found",
+  "statusCode": "201",
+  "count": 3,
+  "prescription": [
+    {
+      "doctor_details": {
+        "name": "Marcio",
+        "cpf": "03309273104",
+        "crm": "12345678",
+        "statecrm": "DF"
+      },
+      "createdAt": "2020-06-17T03:06:39.422Z",
+      "_id": "5ee98b00970369158490cbdb",
+      "cpf": "03309273104",
+      "name": "Marcio",
+      "birth": "16/03/1992",
+      "sex": "M",
+      "medicines": [
+        {
+          "_id": "5ee98b00970369158490cbdc",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        },
+        {
+          "_id": "5ee98b00970369158490cbdd",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        }
+      ],
+      "doctor": "5ee910d5a1428d308851eb9d",
+      "__v": 0
+    },
+    {
+      "doctor_details": {
+        "name": "Marcio",
+        "cpf": "03309273104",
+        "crm": "12345678",
+        "statecrm": "DF"
+      },
+      "createdAt": "2020-06-17T03:06:39.422Z",
+      "_id": "5ee98b01970369158490cbde",
+      "cpf": "03309273104",
+      "name": "Marcio",
+      "birth": "16/03/1992",
+      "sex": "M",
+      "medicines": [
+        {
+          "_id": "5ee98b01970369158490cbdf",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        },
+        {
+          "_id": "5ee98b01970369158490cbe0",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        }
+      ],
+      "doctor": "5ee910d5a1428d308851eb9d",
+      "__v": 0
+    },
+    {
+      "doctor_details": {
+        "name": "Marcio",
+        "cpf": "03309273104",
+        "crm": "12345678",
+        "statecrm": "DF"
+      },
+      "createdAt": "2020-06-17T03:06:39.422Z",
+      "_id": "5ee98b01970369158490cbe1",
+      "cpf": "03309273104",
+      "name": "Marcio",
+      "birth": "16/03/1992",
+      "sex": "M",
+      "medicines": [
+        {
+          "_id": "5ee98b01970369158490cbe2",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        },
+        {
+          "_id": "5ee98b01970369158490cbe3",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        }
+      ],
+      "doctor": "5ee910d5a1428d308851eb9d",
+      "__v": 0
+    }
+  ]
+}
+```
+
+> PUT PATCH http://localhost:3000/prescription/{ID}
+
+### Espera: 
+```JSON
+{
+	"cpf": "03309273104",
+	"name": "aaaaaa",
+	"birth": "16/03/1992",
+	"sex": "M"
+}
+```
+### Retorna:
+```JSON
+{
+  "status": "success",
+  "statusCode": 200,
+  "info": "prescription updated",
+  "prescription": [
+    {
+      "doctor_details": {
+        "name": "Marcio",
+        "cpf": "03309273104",
+        "crm": "12345678",
+        "statecrm": "DF"
+      },
+      "createdAt": "2020-06-17T03:06:39.422Z",
+      "_id": "5ee98b00970369158490cbdb",
+      "cpf": "03309273104",
+      "name": "aaaaaa",
+      "birth": "16/03/1992",
+      "sex": "M",
+      "medicines": [
+        {
+          "_id": "5ee98b00970369158490cbdc",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        },
+        {
+          "_id": "5ee98b00970369158490cbdd",
+          "description": "description",
+          "quantity": "quantity",
+          "dosage": "dosage",
+          "frequency": "frequency"
+        }
+      ],
+      "doctor": "5ee910d5a1428d308851eb9d",
+      "__v": 0
+    }
+  ]
+}
+```
+Apenas os dados do paciente, uma vez que os dados do médico irão automáticos.
+
+
+> DELETE http://localhost:3000/prescription/{ID}
+
+### Retorna:
+
+```JSOn
+{
+  "status": "success",
+  "statusCode": 200,
+  "info": "prescription deleted"
+}
+```
+Caso o token de autenthicasão seja inválido ou i Id não encontrado, retorna:
+
+```JSON
+{
+  "status": "error",
+  "statusCode": 401,
+  "info": "Not found"
+}
+```
+
