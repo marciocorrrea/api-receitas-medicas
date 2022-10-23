@@ -670,7 +670,3 @@ Caso o token de autenthicasão seja inválido ou i Id não encontrado, retorna:
   "info": "Not found"
 }
 ```
-
-### Créditos API
-
-- Empresa: Zhealth
