@@ -1,5 +1,5 @@
 
-## API-REST-ZHealth
+## API de cadastro de receitas medicas
 
 #### Modelo de API REST para cadastro de médicos e prescrições receitas usando:
 
