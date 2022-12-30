@@ -28,6 +28,6 @@
         "nodemon": "^2.0.4",
         "chai-http": "^4.3.0",
         "chai-things": "^0.2.0",
-        "mocha": "^8.0.1"
+        "mocha": "^8.4.0"
     }
 }
